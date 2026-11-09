@@ -1,0 +1,22 @@
+{
+  "name": "incident-triage-evidence-gate",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Runnable demonstration of evidence validation, safe abstention, and human-in-the-loop incident triage.",
+  "main": "src/core.cjs",
+  "scripts": {
+    "demo": "node src/triage.mjs --all",
+    "test": "node --test test/triage.test.mjs test/cli.test.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "keywords": [
+    "incident-triage",
+    "evidence-validation",
+    "sre",
+    "observability",
+    "human-in-the-loop"
+  ],
+  "license": "MIT"
+}

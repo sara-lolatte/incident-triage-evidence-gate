@@ -1,0 +1,26 @@
+{
+  "scenario": "A login HTTP 500 but service logs are missing",
+  "runId": "CI-1046",
+  "test": "login flow redirects to dashboard",
+  "firstAttempt": {
+    "status": "failed",
+    "message": "Timeout waiting for dashboard navigation",
+    "responses": [
+      {
+        "id": "resp-1",
+        "method": "POST",
+        "path": "/api/internal/login",
+        "status": 500,
+        "at": "2026-11-06T14:05:03.102Z",
+        "requestId": "login-41",
+        "traceId": "tr-7"
+      }
+    ],
+    "serviceLogs": []
+  },
+  "retry": {
+    "status": "passed",
+    "at": "2026-11-06T14:06:40.000Z"
+  },
+  "traceArtifact": "artifacts/CI-1046/login-trace.zip"
+}

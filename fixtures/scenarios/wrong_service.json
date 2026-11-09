@@ -1,0 +1,36 @@
+{
+  "scenario": "Login HTTP 500 plus unrelated service error at same timestamp",
+  "runId": "CI-1045",
+  "test": "login flow redirects to dashboard",
+  "firstAttempt": {
+    "status": "failed",
+    "message": "Timeout waiting for dashboard navigation",
+    "responses": [
+      {
+        "id": "resp-1",
+        "method": "POST",
+        "path": "/api/internal/login",
+        "status": 500,
+        "at": "2026-11-06T14:05:03.102Z",
+        "requestId": "login-41",
+        "traceId": "tr-7"
+      }
+    ],
+    "serviceLogs": [
+      {
+        "id": "log-1",
+        "at": "2026-11-06T14:05:03.101Z",
+        "service": "email-worker",
+        "level": "ERROR",
+        "requestId": "login-41",
+        "traceId": "tr-7",
+        "message": "SMTP timeout"
+      }
+    ]
+  },
+  "retry": {
+    "status": "passed",
+    "at": "2026-11-06T14:06:40.000Z"
+  },
+  "traceArtifact": "artifacts/CI-1045/login-trace.zip"
+}

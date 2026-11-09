@@ -1,0 +1,8 @@
+{
+  "claimType": "possible_service_side_login_failure",
+  "claimScope": "investigation_only",
+  "evidenceIds": ["resp-1", "log-1", "log-made-up"],
+  "nextAction": "inspect_auth_service",
+  "draftText": "The auth service failed. See resp-1, log-1 and log-made-up.",
+  "source": "Hand-written synthetic proposal; not produced by a live model"
+}

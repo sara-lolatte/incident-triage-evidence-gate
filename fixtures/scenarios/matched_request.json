@@ -1,0 +1,63 @@
+{
+  "scenario": "Two login failures, corresponding errors in the same request and trace",
+  "runId": "CI-1042",
+  "test": "login flow redirects to dashboard",
+  "firstAttempt": {
+    "status": "failed",
+    "message": "Timeout waiting for dashboard navigation",
+    "responses": [
+      {
+        "id": "resp-1",
+        "method": "POST",
+        "path": "/api/internal/login",
+        "status": 500,
+        "at": "2026-11-06T14:05:03.102Z",
+        "requestId": "login-41",
+        "traceId": "tr-7"
+      },
+      {
+        "id": "resp-2",
+        "method": "GET",
+        "path": "/login",
+        "status": 302,
+        "at": "2026-11-06T14:05:03.230Z",
+        "requestId": "login-41",
+        "traceId": "tr-7"
+      },
+      {
+        "id": "resp-3",
+        "method": "POST",
+        "path": "/api/internal/login",
+        "status": 500,
+        "at": "2026-11-06T14:05:04.917Z",
+        "requestId": "login-42",
+        "traceId": "tr-8"
+      }
+    ],
+    "serviceLogs": [
+      {
+        "id": "log-1",
+        "at": "2026-11-06T14:05:03.100Z",
+        "service": "auth-api",
+        "level": "ERROR",
+        "requestId": "login-41",
+        "traceId": "tr-7",
+        "message": "Upstream dependency unavailable while processing login"
+      },
+      {
+        "id": "log-2",
+        "at": "2026-11-06T14:05:04.915Z",
+        "service": "auth-api",
+        "level": "ERROR",
+        "requestId": "login-42",
+        "traceId": "tr-8",
+        "message": "Login request failed in auth service"
+      }
+    ]
+  },
+  "retry": {
+    "status": "passed",
+    "at": "2026-11-06T14:06:40.000Z"
+  },
+  "traceArtifact": "artifacts/CI-1042/login-trace.zip"
+}

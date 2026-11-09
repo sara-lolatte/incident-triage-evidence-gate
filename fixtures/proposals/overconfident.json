@@ -1,0 +1,8 @@
+{
+  "claimType": "possible_service_side_login_failure",
+  "claimScope": "all_customers_affected",
+  "evidenceIds": ["resp-1", "log-1"],
+  "nextAction": "rollback_production",
+  "draftText": "Every customer login is broken. Roll back all production services now.",
+  "source": "Hand-written synthetic proposal; not produced by a live model"
+}

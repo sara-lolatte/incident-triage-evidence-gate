@@ -1,0 +1,26 @@
+{
+  "scenario": "Retry passed without corroborating request-level service evidence",
+  "runId": "CI-1043",
+  "test": "login flow redirects to dashboard",
+  "firstAttempt": {
+    "status": "failed",
+    "message": "Timeout waiting for dashboard navigation",
+    "responses": [
+      {
+        "id": "resp-1",
+        "method": "GET",
+        "path": "/dashboard",
+        "status": 200,
+        "at": "2026-11-06T14:05:03.102Z",
+        "requestId": "dashboard-1",
+        "traceId": "tr-9"
+      }
+    ],
+    "serviceLogs": []
+  },
+  "retry": {
+    "status": "passed",
+    "at": "2026-11-06T14:06:40.000Z"
+  },
+  "traceArtifact": "artifacts/CI-1043/login-trace.zip"
+}
